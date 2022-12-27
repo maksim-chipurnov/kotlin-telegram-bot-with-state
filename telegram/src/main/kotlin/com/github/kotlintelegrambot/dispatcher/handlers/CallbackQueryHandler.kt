@@ -5,10 +5,10 @@ import com.github.kotlintelegrambot.entities.CallbackQuery
 import com.github.kotlintelegrambot.entities.Update
 
 data class CallbackQueryHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val callbackQuery: CallbackQuery
-)
+) : HandlerEnvironment
 
 internal class CallbackQueryHandler(
     private val callbackData: String? = null,

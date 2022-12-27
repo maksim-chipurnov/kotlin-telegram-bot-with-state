@@ -5,10 +5,10 @@ import com.github.kotlintelegrambot.entities.InlineQuery
 import com.github.kotlintelegrambot.entities.Update
 
 data class InlineQueryHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val inlineQuery: InlineQuery
-)
+) : HandlerEnvironment
 
 internal class InlineQueryHandler(
     private val handleInlineQuery: HandleInlineQuery

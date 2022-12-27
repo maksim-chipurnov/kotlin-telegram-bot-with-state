@@ -6,10 +6,10 @@ import com.github.kotlintelegrambot.entities.Update
 import com.github.kotlintelegrambot.extensions.filters.Filter
 
 data class MessageHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val message: Message
-)
+) : HandlerEnvironment
 
 internal class MessageHandler(
     private val filter: Filter,

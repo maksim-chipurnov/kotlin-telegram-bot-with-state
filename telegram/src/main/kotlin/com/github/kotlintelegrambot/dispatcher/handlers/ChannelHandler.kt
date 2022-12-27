@@ -5,11 +5,11 @@ import com.github.kotlintelegrambot.entities.Message
 import com.github.kotlintelegrambot.entities.Update
 
 data class ChannelHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val channelPost: Message,
     val isEdition: Boolean
-)
+) : HandlerEnvironment
 
 internal class ChannelHandler(
     private val handleChannelPost: HandleChannelPost

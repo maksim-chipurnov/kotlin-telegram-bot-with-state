@@ -5,10 +5,10 @@ import com.github.kotlintelegrambot.entities.Update
 import com.github.kotlintelegrambot.entities.payments.PreCheckoutQuery
 
 data class PreCheckoutQueryHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val preCheckoutQuery: PreCheckoutQuery
-)
+) : HandlerEnvironment
 
 internal class PreCheckoutQueryHandler(
     private val handlePreCheckoutQuery: HandlePreCheckoutQuery

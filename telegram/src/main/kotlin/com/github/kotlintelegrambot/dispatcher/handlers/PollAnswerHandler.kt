@@ -5,10 +5,10 @@ import com.github.kotlintelegrambot.entities.Update
 import com.github.kotlintelegrambot.entities.polls.PollAnswer
 
 data class PollAnswerHandlerEnvironment(
-    val bot: Bot,
-    val update: Update,
+    override val bot: Bot,
+    override val update: Update,
     val pollAnswer: PollAnswer
-)
+) : HandlerEnvironment
 
 internal class PollAnswerHandler(
     private val handlePollAnswer: HandlePollAnswer
